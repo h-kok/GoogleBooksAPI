@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Google Books API</title>
+        <link rel="stylesheet" href="./scss/styles.scss" />
+        <script defer type="module" src="./javascript/script.js"></script>
+    </head>
+    <body>
+        <header class="header">
+            <h1 class="header__heading">Book Search</h1>
+            <p class="header__para">Search engine for full-text books.</p>
+        </header>
+        <form class="search-bar">
+            <input
+                class="search-bar__text"
+                type="text"
+                id="search-term"
+                required
+            />
+            <button class="search-bar__btn" type="submit">Go</button>
+        </form>
+        <div class="result__container"></div>
+        <div class="selected-book"></div>
+    </body>
+</html>
+<!-- onclick="getSearchTerm()" -->
