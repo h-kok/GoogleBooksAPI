@@ -1,9 +1,3 @@
-//function to get google books api
-// export const getTitle = (resultsArr, index) => {
-//     const title = resultsArr[index].title;
-//     return title;
-// };
-
 export const getBooksBySearch = async (searchTerm) => {
     const response = await fetch(
         `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}`
@@ -11,30 +5,24 @@ export const getBooksBySearch = async (searchTerm) => {
     // console.log(response);
 
     const data = await response.json();
-    // console.log(data);
+    console.log(data);
+    console.log(data.totalItems);
+    // data.totalItems < 1
+    console.log(data.items === undefined);
 
-    const { items } = data;
-    // console.log(items);
-    //items is an array of objects.
+    // try {
+    //     if (data.items === undefined)
+    //         throw `There were no matches found for the search term: ${searchTerm}`;
+    // } catch (err) {
+    //     err + "!";
+    // }
 
-    if (!items) {
-        throw new Error(
-            `There were no matches found for the search term: ${searchTerm}`
-        );
+    const volumeInfo = data.items.map((book) => book.volumeInfo);
+    console.log(volumeInfo);
+
+    if (volumeInfo === undefined) {
+        throw new Error`There were no matches found for the search term: ${searchTerm}`();
     }
-    const volumeInfo = items.map((book) => book.volumeInfo);
-    // console.log(volumeInfo);
 
-    const searchResults = volumeInfo.map((result) => {
-        const { title, imageLinks, authors, description, ...rest } = result;
-        const cleanedResult = { title, imageLinks, authors, description };
-        return cleanedResult;
-    });
-
-    console.log(typeof searchResults);
-    // console.log(searchResults[0].imageLinks);
-
-    // const getTitle = getTitle(searchResults, 0)
-    // console.log(getTitle);
-    return searchResults;
+    return volumeInfo;
 };
