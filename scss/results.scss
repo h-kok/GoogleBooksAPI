@@ -1,0 +1,22 @@
+.result {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &__card {
+        border: 2px solid black;
+        border-radius: 10px;
+        padding: 1vw;
+        margin: 1vw;
+        width: 300px;
+    }
+
+    &__img {
+        width: 130px;
+        max-height: 170px;
+    }
+
+    &__para {
+        text-align: justify;
+    }
+}

@@ -1,0 +1,12 @@
+.feature-book {
+    &__card {
+        border: 2px solid black;
+        border-radius: 10px;
+        position: fixed;
+        top: 10vw;
+        left: 10vw;
+        right: 10vw;
+        background-color: white;
+        padding: 2vw;
+    }
+}

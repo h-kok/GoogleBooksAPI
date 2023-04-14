@@ -1,0 +1,48 @@
+.header {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.search-bar {
+  padding: 1vw;
+  margin: 1vw;
+  display: flex;
+  justify-content: center;
+}
+.search-bar__text {
+  width: 68vw;
+}
+.search-bar__btn {
+  width: 10vw;
+}
+
+.result {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.result__card {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 1vw;
+  margin: 1vw;
+  width: 300px;
+}
+.result__img {
+  width: 130px;
+  max-height: 170px;
+}
+.result__para {
+  text-align: justify;
+}
+
+.feature-book__card {
+  border: 2px solid black;
+  border-radius: 10px;
+  position: fixed;
+  top: 10vw;
+  left: 10vw;
+  right: 10vw;
+  background-color: white;
+  padding: 2vw;
+}

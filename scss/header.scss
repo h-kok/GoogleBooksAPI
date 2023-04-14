@@ -1,0 +1,19 @@
+.header {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.search-bar {
+    padding: 1vw;
+    margin: 1vw;
+    display: flex;
+    justify-content: center;
+    // position: fixed;
+    &__text {
+        width: 68vw;
+        // margin-left: 2vw;
+    }
+    &__btn {
+        width: 10vw;
+    }
+}
