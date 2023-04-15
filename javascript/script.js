@@ -1,55 +1,10 @@
 import { getBooksBySearch } from "./functions.js";
-import {
-    createFeatureBookCard,
-    createResultCard,
-    createTextEl,
-} from "./dom-utils.js";
+import { createTextEl } from "./dom-utils.js";
+import { displayResults, displayFeatureBookCard } from "./create-cards.js";
 
 const searchBtn = document.querySelector(".search-bar__btn");
-const resultsContainer = document.querySelector(".result__container");
-
-// getBooksBySearch("dog training");
-const displayResults = (array) => {
-    const result = array.map((result) => {
-        const id = result.industryIdentifiers[0].identifier;
-        const title = result.title;
-        const image = result.imageLinks.thumbnail;
-        const author = result.authors.toString();
-        const description = result.description;
-
-        createResultCard(title, image, author, description, id);
-    });
-};
-
-const displayFeatureCard = (array, btnId) => {
-    const featureBook = array.filter(
-        (result) => result.industryIdentifiers[0].identifier === btnId
-    );
-    // console.log(featureBook);
-    featureBook.map((result) => {
-        const title = result.title;
-        const image = result.imageLinks.thumbnail;
-        const author = result.authors.join(", ").toString();
-        const categories = result.categories.join(", ").toString();
-        const language = result.language;
-        const pageCount = result.pageCount;
-        const publishedDate = result.publishedDate;
-        const subtitle = result.subtitle;
-        const publisher = result.publisher;
-
-        createFeatureBookCard(
-            title,
-            image,
-            author,
-            categories,
-            language,
-            pageCount,
-            publishedDate,
-            subtitle,
-            publisher
-        );
-    });
-};
+const resultsContainer = document.querySelector(".result");
+const featureBook = document.querySelector(".feature-book");
 
 searchBtn.addEventListener("click", async (e) => {
     e.preventDefault();
@@ -70,27 +25,34 @@ searchBtn.addEventListener("click", async (e) => {
     }
 
     // getBooksBySearch(searchTerm).then(displayResults);
-    const results = await getBooksBySearch(searchTerm);
+    if (!resultsContainer.hasChildNodes()) {
+        createTextEl("result__loading", "results loading...", resultsContainer);
+    }
 
-    // try {
-    //     await getBooksBySearch(searchTerm);
-    //     throw `There were no matches found for the search term: ${searchTerm}`;
-    // } catch (err) {
-    //     `${err}!`;
-    // }
-    // console.log(results);
-    // console.log(results.length, "no. results");
+    const results = await getBooksBySearch(searchTerm);
+    console.log(results);
+
     try {
-        if (results.length < 1)
+        if (results.totalItems < 1)
             throw `There were no matches found for the search term: ${searchTerm}`;
     } catch (err) {
-        createTextEl("error-msg", err, resultsContainer);
+        createTextEl("result__error-msg", err, resultsContainer);
     }
+
+    if (document.querySelector(".result__loading")) {
+        resultsContainer.firstChild.remove();
+    }
+    // if (document.querySelector(".result__error-msg")) {
+    //     resultsContainer.firstChild.remove();
+    // }
+
     displayResults(results);
 
-    resultsContainer.addEventListener("click", (e) => {
+    document.addEventListener("click", (e) => {
         const btnId = e.target.id;
-        // console.log(btnId);
-        displayFeatureCard(results, btnId);
+        if (featureBook.hasChildNodes()) {
+            featureBook.lastChild.remove();
+        }
+        displayFeatureBookCard(results, btnId);
     });
 });
