@@ -20,12 +20,10 @@
 
 ## What did you struggle with?
 
--   What? Why? How?
-
 1. Understanding how async/await functions works and the differences between async/awit and .then()/.catch(). As this was my first project that required fetching data from an API and appyling async functions, I struggled to understand how I could use array iterator methods on a promise, as it returns an object. I eventually worked out that I could use array iterators, and create iterator functions, as long as they are called within the asyn function.
 
 2. Understanding the purpose of and how/when to use try/catch statements. This was my first time using tyr/catch statements in general and the MVP specified that .catch() should not be used. Through the project I applied try/catch statments in conjunction with DOM elements to display error messages.
 
 # Live Version
 
-You can view the live version here: "insert link"
+You can view the live version here: https://h-kok.github.io/GoogleBooksAPI/
