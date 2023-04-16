@@ -1,39 +1,30 @@
 ### Google Books API Search Engine
 
-The MVP was to create a page to display books based on search term, using the Google Books API. This project focuses on developing recently aquired knowledge of Javascript Promises, as well as incorporating all previously learnt topics.
-
 ## Requirements / Purpose
 
--   MVP
--   purpose of project
--   stack used and why
+-   The MVP was to create a search engine using the Google Books API. This project focuses on developing recently aquired knowledge of Javascript Promises, as well as incorporating all previously learnt topics, including DOM manipulation.
+-   This project has been created with vanilla Javascript, CSS/Sass and HTML, as I wanted to further improve my function writing and DOM manipulation skills.
 
 ## Design Goals / Approach
 
--   Design goals
--   why did you implement this the way you did?
+-   I have created a simple user interface, which includes a search bar, result cards and a feature book card. To optimise user experience, I have chosen a font that is easily legible, paired with a low contrasting blue colour palette.
 
 ## Known issues
 
--   Remaining bugs, things that have been left unfixed
--   Features that are buggy / flimsy
+-   Feature card design and positioning could be improved upon.
 
 ## Future Goals
 
 -   What are the immediate features you'd add given more time
-
-## Change logs
-
--   Write a paragraph labelled with the date every day you work on the project to discuss what you've done for the say. Be specific about the changes that have happened for that day.
+-   Create bottom nav bar and explore how to see/load more search results on a new page.
 
 ## What did you struggle with?
 
 -   What? Why? How?
 
-## Further details, related projects, reimplementations
+1. Understanding how async/await functions works and the differences between async/awit and .then()/.catch(). As this was my first project that required fetching data from an API and appyling async functions, I struggled to understand how I could use array iterator methods on a promise, as it returns an object. I eventually worked out that I could use array iterators, and create iterator functions, as long as they are called within the asyn function.
 
--   Is this project a reimplementation for something you've done in the past? if so explain it and link it here.
--   If it's an API, is there a client app that works with this project? link it
+2. Understanding the purpose of and how/when to use try/catch statements. This was my first time using tyr/catch statements in general and the MVP specified that .catch() should not be used. Through the project I applied try/catch statments in conjunction with DOM elements to display error messages.
 
 # Live Version
 
