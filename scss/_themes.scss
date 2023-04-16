@@ -1,0 +1,30 @@
+//colour palette
+$primary-color: rgb(69, 98, 104);
+$secondary-color: rgb(121, 163, 177);
+$tertiary-color: rgb(234, 249, 255);
+$quaternary-color: rgb(255, 254, 250);
+
+//fonts
+$primary-font: "Montserrat", sans-serif;
+$secondary-font: "Righteous", cursive;
+
+//breakpoints
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+//variables
+%image-styling {
+    box-shadow: 5px 5px $tertiary-color;
+    border-radius: 5px;
+}
+
+%scroll-up-btn-style {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 2;
+}
