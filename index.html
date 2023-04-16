@@ -5,13 +5,22 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Google Books API</title>
-        <link rel="stylesheet" href="./scss/styles.scss" />
+        <link rel="stylesheet" href="styles.css" />
         <script defer type="module" src="./javascript/script.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat&family=Righteous&display=swap"
+            rel="stylesheet"
+        />
     </head>
     <body>
         <header class="header">
-            <h1 class="header__heading">Book Search</h1>
-            <p class="header__para">Search engine for full-text books.</p>
+            <h1 class="header__heading">Book Finder</h1>
+            <p class="header__para">
+                Type in a search term to get started. Search by any criteria
+                (e.g. title, author or genre) to find matches.
+            </p>
         </header>
         <form class="search-bar">
             <input
@@ -22,8 +31,17 @@
             />
             <button class="search-bar__btn" type="submit">Go</button>
         </form>
-        <div class="result__container"></div>
-        <div class="feature-book__container"></div>
+        <div class="result"></div>
+        <img
+            class="background-img"
+            src="assets\book-img.jpg"
+            alt="book with magnifying glass"
+        />
+        <div class="feature-book"></div>
+        <img
+            class="scroll-up-btn"
+            src="assets\icons8-scroll-up-48.png"
+            alt="up arrow"
+        />
     </body>
 </html>
-<!-- onclick="getSearchTerm()" -->
