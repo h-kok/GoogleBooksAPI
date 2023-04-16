@@ -1,12 +1,61 @@
+@use "mixins";
+@import "themes";
+
 .feature-book {
     &__card {
-        border: 2px solid black;
+        @include mixins.phone {
+            text-align: justify;
+        }
+        @include mixins.laptop-screen-and-larger {
+            top: 15vw;
+            left: 12vw;
+            max-height: 50vh;
+            width: 70vw;
+        }
+        border: 2px solid $primary-color;
         border-radius: 10px;
         position: fixed;
-        top: 10vw;
-        left: 10vw;
-        right: 10vw;
+        z-index: 3;
+        top: 27vh;
+        left: 8vw;
+        width: 80vw;
+        max-height: 65vh;
+
         background-color: white;
-        padding: 2vw;
+        padding: 3vw;
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+        & > p {
+            margin: 5px 0;
+        }
+    }
+    &__img-wrapper {
+        @include mixins.phone {
+            flex-direction: column;
+            align-items: center;
+        }
+        display: flex;
+        margin-bottom: 20px;
+        & + p {
+            text-decoration: underline;
+        }
+    }
+    &__img {
+        width: 160px;
+        height: 210px;
+        margin: 10px;
+        @extend %image-styling;
+    }
+    &__para-wrapper {
+        margin-left: 20px;
+        & > p:first-child {
+            font-weight: bold;
+            font-size: larger;
+        }
+    }
+
+    &__para {
+        margin: 10px 0px;
     }
 }
