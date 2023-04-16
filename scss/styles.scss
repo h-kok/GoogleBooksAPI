@@ -1,9 +1,47 @@
 @use "header";
 @use "results";
 @use "feature-book";
+@use "mixins";
+@import "themes";
 
 // body {
 //     display: flex;
 //     flex-direction: column;
 //     align-items: center;
 // }
+* {
+    padding: 0;
+    margin: 0;
+    // background-color: $tertiary-color;
+    // font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: $primary-font;
+    scroll-behavior: smooth;
+}
+
+.background-img {
+    @include mixins.tablet {
+        width: 50vw;
+        height: 50vw;
+        top: 50vh;
+        left: 25vw;
+    }
+    position: fixed;
+    z-index: -1;
+    opacity: 0.2;
+    width: 30vw;
+    height: 30vw;
+    top: 40vh;
+    left: 35vw;
+}
+
+.scroll-up-btn {
+    display: none;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 2;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}

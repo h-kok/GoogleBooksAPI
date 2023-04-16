@@ -1,48 +1,211 @@
 .header {
   text-align: center;
-  margin-top: 50px;
+  background-color: rgb(69, 98, 104);
+  color: white;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+.header__heading {
+  padding-bottom: 20px;
+  background-color: rgb(69, 98, 104);
+  font-family: "Righteous", cursive;
+}
+.header__para {
+  background-color: rgb(69, 98, 104);
+  padding: 0 20px;
 }
 
 .search-bar {
-  padding: 1vw;
-  margin: 1vw;
+  background-color: rgb(121, 163, 177);
+  padding: 2vw;
   display: flex;
   justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 .search-bar__text {
   width: 68vw;
+  border-radius: 5px;
+  border: 2px solid rgb(69, 98, 104);
+  background-color: white;
 }
 .search-bar__btn {
   width: 10vw;
+  height: 30px;
+  border: 2px solid rgb(69, 98, 104);
+  border-radius: 5px;
+  background-color: white;
+  color: rgb(69, 98, 104);
+}
+.search-bar__btn:hover {
+  background-color: rgb(69, 98, 104);
+  color: white;
+}
+
+.result__img {
+  box-shadow: 5px 5px rgb(234, 249, 255);
+  border-radius: 5px;
 }
 
 .result {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 2vw 0;
+  background-color: rgb(234, 249, 255);
 }
 .result__card {
-  border: 2px solid black;
+  border: 2px solid rgb(69, 98, 104);
   border-radius: 10px;
   padding: 1vw;
   margin: 1vw;
-  width: 300px;
+  width: 250px;
+  height: 400px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 .result__img {
   width: 130px;
-  max-height: 170px;
+  height: 170px;
+}
+.result__para-wrapper {
+  overflow: auto;
+  height: 180px;
 }
 .result__para {
+  margin: 15px;
+}
+.result__para:nth-of-type(1) {
+  font-weight: bold;
   text-align: justify;
+  display: flex;
+  align-items: center;
+}
+.result__para:nth-of-type(3) {
+  font-style: italic;
+}
+.result__btn {
+  background-color: rgb(121, 163, 177);
+  border: 2px solid rgb(121, 163, 177);
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  width: 150px;
+  position: absolute;
+  bottom: 20px;
+}
+.result__btn:hover {
+  background-color: rgb(69, 98, 104);
+  border: 2px solid rgb(69, 98, 104);
+}
+
+.feature-book__img {
+  box-shadow: 5px 5px rgb(234, 249, 255);
+  border-radius: 5px;
+}
+
+.feature-book__img {
+  box-shadow: 5px 5px rgb(234, 249, 255);
+  border-radius: 5px;
 }
 
 .feature-book__card {
-  border: 2px solid black;
+  border: 2px solid rgb(69, 98, 104);
   border-radius: 10px;
   position: fixed;
-  top: 10vw;
-  left: 10vw;
-  right: 10vw;
+  z-index: 3;
+  top: 27vh;
+  left: 8vw;
+  width: 80vw;
+  max-height: 65vh;
   background-color: white;
-  padding: 2vw;
+  padding: 3vw;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+@media only screen and (max-width: 576px) {
+  .feature-book__card {
+    text-align: justify;
+  }
+}
+@media only screen and (min-width: 993px) {
+  .feature-book__card {
+    top: 15vw;
+    left: 12vw;
+    max-height: 50vh;
+    width: 70vw;
+  }
+}
+.feature-book__card > p {
+  margin: 5px 0;
+}
+.feature-book__img-wrapper {
+  display: flex;
+  margin-bottom: 20px;
+}
+@media only screen and (max-width: 576px) {
+  .feature-book__img-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.feature-book__img-wrapper + p {
+  text-decoration: underline;
+}
+.feature-book__img {
+  width: 160px;
+  height: 210px;
+  margin: 10px;
+}
+.feature-book__para-wrapper {
+  margin-left: 20px;
+}
+.feature-book__para-wrapper > p:first-child {
+  font-weight: bold;
+  font-size: larger;
+}
+.feature-book__para {
+  margin: 10px 0px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
+}
+
+.background-img {
+  position: fixed;
+  z-index: -1;
+  opacity: 0.2;
+  width: 30vw;
+  height: 30vw;
+  top: 40vh;
+  left: 35vw;
+}
+@media only screen and (max-width: 768px) {
+  .background-img {
+    width: 50vw;
+    height: 50vw;
+    top: 50vh;
+    left: 25vw;
+  }
+}
+
+.scroll-up-btn {
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 2;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
 }
