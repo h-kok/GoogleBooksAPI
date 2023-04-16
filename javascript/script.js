@@ -1,10 +1,17 @@
-import { getBooksBySearch } from "./functions.js";
+import { getBooksBySearch, scrollToTop } from "./functions.js";
 import { createTextEl } from "./dom-utils.js";
-import { displayResults, displayFeatureBookCard } from "./create-cards.js";
+import { displayResults, displayFeatureBookCard } from "./display-cards.js";
 
 const searchBtn = document.querySelector(".search-bar__btn");
 const resultsContainer = document.querySelector(".result");
 const featureBook = document.querySelector(".feature-book");
+const searchBar = document.querySelector(".search-bar__text");
+const scrollUp = document.querySelector(".scroll-up-btn");
+
+searchBar.addEventListener("click", (e) => {
+    console.log("hello");
+    e.target.value = "";
+});
 
 searchBtn.addEventListener("click", async (e) => {
     e.preventDefault();
@@ -24,7 +31,6 @@ searchBtn.addEventListener("click", async (e) => {
         createTextEl("error-msg", err, resultsContainer);
     }
 
-    // getBooksBySearch(searchTerm).then(displayResults);
     if (!resultsContainer.hasChildNodes()) {
         createTextEl("result__loading", "results loading...", resultsContainer);
     }
@@ -42,9 +48,6 @@ searchBtn.addEventListener("click", async (e) => {
     if (document.querySelector(".result__loading")) {
         resultsContainer.firstChild.remove();
     }
-    // if (document.querySelector(".result__error-msg")) {
-    //     resultsContainer.firstChild.remove();
-    // }
 
     displayResults(results);
 
@@ -55,4 +58,13 @@ searchBtn.addEventListener("click", async (e) => {
         }
         displayFeatureBookCard(results, btnId);
     });
+
+    if (resultsContainer.hasChildNodes()) {
+        scrollUp.style.display = "block";
+    }
+});
+console.log(resultsContainer.hasChildNodes());
+
+scrollUp.addEventListener("click", () => {
+    scrollToTop();
 });
