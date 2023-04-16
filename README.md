@@ -24,6 +24,6 @@
 
 2. Understanding the purpose of and how/when to use try/catch statements. This was my first time using tyr/catch statements in general and the MVP specified that .catch() should not be used. Through the project I applied try/catch statments in conjunction with DOM elements to display error messages.
 
-# Live Version
+## Live Version
 
 You can view the live version here: https://h-kok.github.io/GoogleBooksAPI/
