@@ -7,7 +7,7 @@
 
 ## Design Goals / Approach
 
--   I have created a simple user interface, which includes a search bar, result cards and a feature book card. To optimise user experience, I have chosen a font that is easily legible, paired with a low contrasting blue colour palette.
+-   Simple user interface, which includes a search bar, result cards and a feature book card. To optimise user experience, font is easily legible, paired with a low contrasting blue colour palette.
 
 ## Known issues
 
@@ -15,7 +15,9 @@
 
 ## Future Goals
 
--   What are the immediate features you'd add given more time
+-   Rebuild project in React.
+-   Explore nullish coalessing operator to refine JS code.
+-   Add error handling for 400 errors.
 -   Create bottom nav bar and explore how to see/load more search results on a new page.
 
 ## What did you struggle with?
